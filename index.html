@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="世界青年科学家峰会安全电子签约终端">
+  <title>世界青年科学家峰会签约系统</title>
+  <link rel="icon" href="./favicon.svg">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <div class="aurora aurora-one"></div><div class="aurora aurora-two"></div>
+    <div class="bubble bubble-one"></div><div class="bubble bubble-two"></div>
+    <section id="aquaWindow" class="aqua-window" aria-live="polite">
+      <div class="window-bar" aria-hidden="true">
+        <div class="traffic-lights"><span class="light red"></span><span class="light amber"></span><span class="light green"></span></div>
+        <div class="window-title">SIGNATURE TERMINAL · 签约终端</div>
+        <div class="secure-pill"><span>◆</span> SECURE</div>
+      </div>
+      <div class="window-content">
+        <header class="brand-header">
+          <img class="brand-logo" src="./assets/summit-mark.png" alt="世界青年科学家峰会标志">
+          <div>
+            <p class="eyebrow">WORLD YOUNG SCIENTIST SUMMIT</p>
+            <h1>世界青年科学家峰会签约系统</h1>
+            <p class="certification"><span>✓</span> 通过国家信息安全等级保护三级及 ISO 18000 认证</p>
+          </div>
+          <div class="session-badge"><span class="pulse"></span>签约席位 <span id="signerNumber">01</span></div>
+        </header>
+        <div class="metal-divider"><span></span></div>
+        <div class="step-row" aria-label="签约进度">
+          <div class="step active"><b>1</b><span>手写签名</span></div><div class="step-line"></div>
+          <div id="step2" class="step"><b>2</b><span>安全提交</span></div><div class="step-line"></div>
+          <div id="step3" class="step"><b>3</b><span>签约完成</span></div>
+        </div>
+        <div class="paper-stack">
+          <div class="paper-back paper-back-two"></div><div class="paper-back paper-back-one"></div>
+          <section class="signature-paper">
+            <div id="signingState">
+              <div class="paper-heading">
+                <div><p class="paper-kicker">ELECTRONIC SIGNATURE</p><h2>请在下方白板区域签名</h2></div>
+                <div class="pen-status"><span>✦</span> 手写笔已就绪</div>
+              </div>
+              <div class="canvas-wrap">
+                <canvas id="signatureCanvas" aria-label="手写签名区域"></canvas>
+                <div id="canvasHint" class="canvas-hint" aria-hidden="true"><span class="pen-glyph">✎</span><strong>按住鼠标并移动进行签名</strong><small>支持触控笔与触摸屏</small></div>
+                <div class="signature-line"><span>SIGN HERE</span></div>
+              </div>
+              <div class="action-row">
+                <div class="privacy-note"><span class="lock">●</span> 您的签名数据已加密保护</div>
+                <button id="clearButton" class="clear-button" type="button" disabled>↻&nbsp; 清除重签 / Clear</button>
+                <button id="submitButton" class="submit-button" type="button" disabled><span>确认并提交 / Confirm &amp; Submit</span><b>›</b></button>
+              </div>
+            </div>
+            <div id="successState" class="success-state hidden">
+              <div class="success-orb"><span>✓</span></div><p class="paper-kicker">SIGNATURE VERIFIED</p><h2>签约成功</h2>
+              <p>电子签名已安全存证，正在为下一位签约人自动翻页</p><div class="loading-track"><span></span></div>
+            </div>
+          </section>
+        </div>
+        <footer><span>© 世界青年科学家峰会</span><span class="footer-center"><i></i> 加密连接正常</span><span>智能签约服务终端</span></footer>
+      </div>
+    </section>
+  </main>
+  <script src="./script.js"></script>
+</body>
+</html>
